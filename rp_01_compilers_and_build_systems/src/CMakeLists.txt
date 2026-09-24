@@ -16,9 +16,12 @@ add_library(core_library SHARED
     messages/base_sensor_message.cpp
     messages/odometry_message.cpp
     messages/pose_message.cpp
+    data_structures/matrix.hpp
 
 )
 
-# TODO: Include the current directory ( . ) to the list of directories to search for header files
 
-# TODO: Include the Eigen3 library to the list of libraries to link against
+target_include_directories(core_library PUBLIC .)
+
+
+target_link_libraries(core_library Eigen3::Eigen)  
